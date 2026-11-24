@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>외무직 시험대비 국제정치</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f2ff;--ink:#1b1d3a;--sub:#6b6f94;--card:#fff;--line:#e3e5fb;--pri:#5b5bf0;--pri2:#8a5cff;--yel:#ffc53d;--mint:#14b8a0;--mintbg:#dcf7f1;--coral:#ff5c7a;--coralbg:#ffe4e9;--hl:#eef0ff;--prof:#fff7dc}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.6;font-size:16px}
+.hidden{display:none!important}
+.disp{font-family:"Black Han Sans","Noto Sans KR",sans-serif;font-weight:400;letter-spacing:-.3px}
+button{font:inherit;color:inherit}
+.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:700;font-size:15px;background:var(--hl);color:var(--pri);cursor:pointer;transition:transform .08s}
+.btn:active{transform:scale(.97)}
+.btn.pri{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;box-shadow:0 6px 16px rgba(91,91,240,.28)}
+.btn.yel{background:var(--yel);color:#4a3600}
+.btn.ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn.sm{padding:7px 12px;font-size:13px;border-radius:10px}
+.btn.block{display:block;width:100%}
+.btn[disabled]{opacity:.4;cursor:not-allowed;box-shadow:none}
+.card{background:var(--card);border-radius:20px;padding:18px;margin-bottom:14px;box-shadow:0 2px 0 var(--line)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.sp{flex:1}
+.note{font-size:13px;color:var(--sub)}
+.err{color:var(--coral);font-size:14px;white-space:pre-wrap}
+.ok{color:var(--mint)}
+input[type=text],select,textarea{font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff;color:var(--ink);width:100%}
+textarea{resize:vertical;min-height:80px}
+label.f{display:block;font-size:13px;font-weight:700;color:var(--sub);margin:12px 0 5px}
+
+/* student shell */
+#student{max-width:560px;margin:0 auto;padding-bottom:96px;min-height:100vh}
+.hero{background:linear-gradient(135deg,#4a4de7,#8a5cff 60%,#ff7ab6);color:#fff;padding:26px 20px 70px;border-radius:0 0 32px 32px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-40px;top:-40px;width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.12)}
+.hero .kick{font-size:12px;font-weight:700;opacity:.85;letter-spacing:.5px}
+.univ{display:inline-block;margin:7px 0 2px;padding:3px 13px;border-radius:999px;background:rgba(255,255,255,.22);font-size:12.5px;font-weight:700;letter-spacing:.6px}
+.univ.dark{background:var(--hl);color:var(--pri);margin:8px 0 4px}
+.hero h1{font-size:30px;line-height:1.15;margin:4px 0 10px}
+.hero .hi{font-size:15px;opacity:.95}
+.lv{display:flex;align-items:center;gap:10px;margin-top:14px}
+.lv .badge{background:var(--yel);color:#4a3600;font-weight:900;border-radius:999px;padding:2px 12px;font-size:13px;white-space:nowrap}
+.xpbar{flex:1;height:10px;background:rgba(255,255,255,.28);border-radius:8px;overflow:hidden}
+.xpbar i{display:block;height:100%;background:#fff;border-radius:8px;transition:width .4s}
+.pull{margin:-48px 14px 0;position:relative}
+.body{padding:0 14px}
+.sec{font-size:17px;margin:20px 2px 10px;font-weight:900}
+.mission{display:flex;gap:16px;align-items:center}
+.ring{position:relative;width:84px;height:84px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:18px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:0;border-radius:18px;padding:16px 14px;text-align:left;cursor:pointer;color:#fff;font-weight:900;font-size:16px;min-height:92px;display:flex;flex-direction:column;justify-content:space-between}
+.tile span{font-weight:500;font-size:12px;opacity:.9}
+.tile .e{font-size:26px}
+.t1{background:linear-gradient(135deg,#5b5bf0,#7a7aff)}.t2{background:linear-gradient(135deg,#ff8a5c,#ff5c7a)}.t3{background:linear-gradient(135deg,#14b8a0,#38d9b9)}.t4{background:linear-gradient(135deg,#f5a623,#ffc53d);color:#3f2d00}
+.catrow{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line);cursor:pointer;background:none;border-left:0;border-right:0;border-bottom:0;width:100%;text-align:left}
+.catrow:first-child{border-top:0}
+.catrow .ic{width:42px;height:42px;border-radius:14px;background:var(--hl);display:grid;place-items:center;font-size:22px;flex:none}
+.catrow .mid{flex:1;min-width:0}.catrow .mid b{display:block;line-height:1.3}
+.mini{height:8px;border-radius:6px;background:var(--hl);overflow:hidden;margin-top:6px}.mini i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--pri2));border-radius:6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700;cursor:pointer;color:var(--ink)}
+.chip.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.seg{display:flex;background:var(--hl);border-radius:14px;padding:4px;gap:4px}
+.seg button{flex:1;border:0;background:none;border-radius:11px;padding:9px 6px;font-weight:700;font-size:14px;cursor:pointer;color:var(--sub)}
+.seg button.on{background:#fff;color:var(--pri);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;padding:6px 8px calc(6px + env(safe-area-inset-bottom));z-index:20}
+.nav .in{display:flex;max-width:560px;width:100%}
+.nav button{flex:1;border:0;background:none;padding:6px 0;font-size:11px;font-weight:700;color:var(--sub);cursor:pointer}
+.nav button em{display:block;font-style:normal;font-size:22px;line-height:1.2}
+.nav button.on{color:var(--pri)}
+.stat3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.stat3 div{background:var(--hl);border-radius:14px;padding:12px 4px}.stat3 b{display:block;font-size:22px;font-family:"Black Han Sans";font-weight:400}.stat3 span{font-size:12px;color:var(--sub)}
+.wrongit{display:flex;gap:10px;align-items:center;padding:12px 0;border-top:1px solid var(--line);width:100%;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;cursor:pointer}
+.wrongit:first-child{border-top:0}
+.wrongit .tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:15px}
+.pill{background:var(--hl);color:var(--pri);border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+.empty{text-align:center;color:var(--sub);padding:26px 0}
+
+/* quiz */
+.qtop{position:sticky;top:0;background:var(--bg);padding:12px 14px 8px;z-index:10}
+.qtop .bar{height:10px;background:#dfe1fb;border-radius:8px;overflow:hidden;margin-top:8px}
+.qtop .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--pri2));border-radius:8px;transition:width .3s}
+.qcard{margin:6px 14px 14px;background:#fff;border-radius:22px;padding:20px 18px;box-shadow:0 2px 0 var(--line)}
+.qtext{font-size:18px;font-weight:700;line-height:1.6;margin:8px 0 16px;white-space:pre-wrap}
+.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;font-size:16px;background:#fff;border:2px solid var(--line);border-radius:16px;padding:13px 14px;margin-bottom:10px;cursor:pointer;transition:transform .08s,border-color .15s}
+.opt:active:not([disabled]){transform:scale(.98)}
+.opt .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--hl);color:var(--pri);display:grid;place-items:center;font-weight:900;font-size:14px}
+.opt.sel{border-color:var(--pri);background:var(--hl)}.opt.sel .n{background:var(--pri);color:#fff}
+.opt.right{border-color:var(--mint);background:var(--mintbg);animation:pop .35s}.opt.right .n{background:var(--mint);color:#fff}
+.opt.wrong{border-color:var(--coral);background:var(--coralbg);animation:shake .35s}.opt.wrong .n{background:var(--coral);color:#fff}
+.opt[disabled]{cursor:default}
+@keyframes pop{50%{transform:scale(1.03)}}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.banner{border-radius:16px;padding:12px 14px;font-weight:900;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.banner.ok{background:var(--mintbg);color:#0b7e6c}.banner.bad{background:var(--coralbg);color:#c2234a}
+.base{background:var(--hl);border-radius:14px;padding:12px 14px;font-size:15px;margin-bottom:12px}
+.base b{display:block;font-size:12px;color:var(--sub)}
+.prof{background:var(--prof);border-radius:18px;padding:14px}
+.prof-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.ava{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 2px 0 #f2e2a6}
+.prof-h b{display:block;line-height:1.2}.prof-h span{font-size:12px;color:var(--sub)}
+.msg{margin:8px 0;font-size:15.5px}
+.msg.u{background:#fff;border-radius:14px;padding:8px 12px;margin-left:30px}
+.msg p{margin:0 0 7px}.msg ul{margin:0 0 7px;padding-left:20px}
+.cur::after{content:"▍";opacity:.5;animation:bl 1s steps(2) infinite}@keyframes bl{50%{opacity:0}}
+.ask{display:flex;gap:8px;margin-top:8px}.ask input{flex:1}
+.abar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));z-index:20}
+.abar .in{max-width:560px;margin:0 auto;display:flex;gap:10px}
+.abar .in .btn.pri{flex:1}
+.score{font-size:58px;line-height:1.1}
+
+/* login */
+.login{max-width:420px;margin:0 auto;padding:60px 22px}
+.login .hero2{text-align:center;margin-bottom:22px}
+.login h1{font-size:32px;line-height:1.15;margin:4px 0;background:linear-gradient(135deg,var(--pri),#ff7ab6);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* professor */
+#pro{max-width:1040px;margin:0 auto;padding:16px 16px 60px}
+.ptop{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ptop h1{font-size:24px;margin:0}
+.ptabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.ptabs button{border:0;background:#fff;border-radius:12px;padding:9px 16px;font-weight:700;cursor:pointer;color:var(--sub)}
+.ptabs button.on{background:var(--pri);color:#fff}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:14px}
+.kpi{background:#fff;border-radius:18px;padding:16px}.kpi b{display:block;font-family:"Black Han Sans";font-weight:400;font-size:30px;line-height:1.2}.kpi span{font-size:13px;color:var(--sub)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font-size:12px;color:var(--sub);cursor:pointer;user-select:none}
+.tw{overflow-x:auto}
+.qi{border-top:1px solid var(--line);padding:12px 0;display:flex;gap:10px;align-items:flex-start}
+.qi:first-child{border-top:0}.qi .tx{flex:1;min-width:0}.qi .tx div{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.bars .b{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px}.bars .nm{width:120px;flex:none}.bars .v{width:76px;text-align:right;color:var(--sub);flex:none}
+.bars .b .mini{flex:1;margin:0}
+.qrbox{background:#fff;border-radius:20px;padding:16px;width:260px;margin:0 auto}
+.qrbox svg{width:100%;height:auto;display:block}
+.warn{background:#fff3d6;border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:12px}
+dialog{border:0;border-radius:22px;padding:20px;max-width:640px;width:calc(100% - 24px);background:#fff;color:var(--ink);max-height:92vh}
+dialog::backdrop{background:rgba(20,20,60,.5)}
+.cho{display:flex;gap:8px;margin-bottom:8px;align-items:center}.cho span{width:22px;font-weight:900;color:var(--pri)}
+@media(max-width:520px){.bars .nm{width:84px}.hero h1{font-size:27px}}
+</style>
+</head>
+<body>
+
+<!-- ============ 학생 ============ -->
+<div id="student">
+  <!-- 로그인(이름 입력) -->
+  <section id="vOnboard" class="hidden">
+    <div class="login">
+      <div class="hero2">
+        <div style="font-size:54px">🎓</div>
+        <div class="note" style="font-weight:700">AI 교수와 함께하는 문제은행</div>
+        <div class="univ dark">동아대학교 정치외교학전공</div>
+        <h1 class="disp">외무직 시험대비<br>국제정치</h1>
+      </div>
+      <div class="card">
+        <label class="f" style="margin-top:0">이름</label>
+        <input type="text" id="obName" maxlength="20" placeholder="예) 김외교" autocomplete="off">
+        <button class="btn pri block" id="obGo" style="margin-top:18px">공부 시작하기 🚀</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 메인(탭) -->
+  <section id="vMain" class="hidden">
+    <div id="tabBody"></div>
+  </section>
+
+  <!-- 문제 풀이 -->
+  <section id="vQuiz" class="hidden">
+    <div class="qtop">
+      <div class="row"><button class="btn sm ghost" data-act="quit">✕ 나가기</button><span class="sp"></span><b id="qpos"></b></div>
+      <div class="bar"><i id="progBar" style="width:0"></i></div>
+    </div>
+    <div class="qcard">
+      <div class="row" id="qmeta"></div>
+      <div class="qtext" id="qtext"></div>
+      <div id="opts"></div>
+    </div>
+    <div class="body hidden" id="fb">
+      <div class="banner" id="banner"></div>
+      <div class="base" id="base"></div>
+      <div class="prof">
+        <div class="prof-h"><div class="ava">🧑‍🏫</div><div><b>AI 교수님</b><span>문제 풀이 해설</span></div><span class="sp"></span><button class="btn sm ghost hidden" id="speak">🔊 읽어주기</button></div>
+        <div id="chat"></div>
+        <div id="explainRow"><button class="btn pri block" id="explain">🧑‍🏫 교수님께 해설 듣기</button></div>
+      </div>
+    </div>
+    <div style="height:110px"></div>
+    <div class="abar"><div class="in">
+      <button class="btn ghost" id="star" title="북마크">☆</button>
+      <button class="btn ghost" id="prev">←</button>
+      <button class="btn pri" id="mainBtn">정답 확인</button>
+    </div></div>
+  </section>
+
+  <!-- 결과 -->
+  <section id="vResult" class="hidden">
+    <div class="hero" style="padding-bottom:34px;text-align:center">
+      <div class="kick">RESULT</div>
+      <div class="score disp" id="scoreBig"></div>
+      <div id="scoreSub" style="font-weight:700"></div>
+      <div id="xpGain" style="margin-top:6px"></div>
+    </div>
+    <div class="body" style="margin-top:14px">
+      <div class="card"><b>영역별 정답률</b><div class="bars" id="catBars" style="margin-top:6px"></div></div>
+      <div class="card"><b>문항별 결과</b> <span class="note">눌러서 해설 보기</span><div id="resList" style="margin-top:6px"></div></div>
+      <div class="row">
+        <button class="btn pri sp" id="retryWrong">틀린 문제 다시 풀기</button>
+        <button class="btn ghost" data-act="home">홈으로</button>
+      </div>
+    </div>
+  </section>
+
+  <nav class="nav hidden" id="nav"><div class="in" id="navIn"></div></nav>
+</div>
+
+<script>
+"use strict";
+/* ===== 설정 ===== */
+// 구글 Apps Script 웹 앱 URL을 아래 따옴표 안에 붙여 넣으면 학생 성적이 시트에 쌓입니다. 비워 두면 기록을 보내지 않습니다.
+const SHEET_URL="";
+const $=id=>document.getElementById(id);
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const dayKey=(t=Date.now())=>{const d=new Date(t+9*3600e3);return d.toISOString().slice(0,10)};
+const pct=(c,t)=>t?Math.round(c/t*100):0;
+function md(s){
+  const lines=esc(s).split("\n");let out="",inList=false;
+  const inl=t=>t.replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
+  for(const raw of lines){const l=raw.trim();const m=l.match(/^(?:[-*•]|\d+[.)])\s+(.*)$/);
+    if(m){if(!inList){out+="<ul>";inList=true}out+="<li>"+inl(m[1])+"</li>"}
+    else{if(inList){out+="</ul>";inList=false}const h=l.match(/^#{1,4}\s+(.*)$/);if(h)out+="<p><b>"+inl(h[1])+"</b></p>";else if(l)out+="<p>"+inl(l)+"</p>"}}
+  if(inList)out+="</ul>";return out;
+}
+const ICONS={"국제정치이론":"🧠","국제안보":"🛡️","민주주의":"🗳️","서양정치사":"📜","외교정책분석":"🧭","한반도·지역":"🗺️"};
+const icon=c=>ICONS[c]||"📘";
+
+/* ===== 예시 문제 (게시된 문제가 없을 때만 사용) ===== */
+const SAMPLE_BANK=[
+ {category:"국제정치이론",difficulty:"중",question:"케네스 왈츠의 신현실주의(구조적 현실주의)에서 국제체제의 구조를 결정짓는 핵심 요소는?",choices:["국가 지도자의 성향","무정부 상태 아래에서의 능력(권력) 분포","국제기구의 규범","국내 정치체제의 유형"],answer:2,explanation:"왈츠는 국가의 내부 속성이 아니라 무정부성과 강대국 간 능력 분포가 국가 행동을 제약한다고 보았다.",prof:"정답은 2번, 무정부 상태 아래에서의 능력 분포예요. 왈츠는 국제체제의 구조를 질서 원리(무정부성), 단위의 기능, 능력의 분포로 설명해요. 국가들은 모두 생존이라는 같은 기능을 수행하니 단위의 기능은 일정하고, 결국 체제를 바꾸는 변수는 능력 분포, 곧 강대국이 몇 개냐(양극·다극)예요.\n- 1번과 4번은 지도자나 국내 체제 같은 국가 내부 속성으로 설명하는 접근이라 왈츠가 비판한 방식이에요.\n- 3번 국제기구의 규범은 자유제도주의와 구성주의가 강조하는 요소예요.\n시험 요령: '구조 = 무정부성 + 능력 분포'를 한 쌍으로 기억하세요."},
+ {category:"국제안보",difficulty:"하",question:"한 국가가 자국의 안보를 높이려는 조치가 상대국에게 위협으로 인식되어 결과적으로 모두의 안보가 약화되는 현상은?",choices:["집단행동의 딜레마","안보 딜레마","죄수의 딜레마","강제 외교의 역설"],answer:2,explanation:"존 허츠와 로버트 저비스가 정식화한 개념으로, 방어적 조치와 공격적 조치를 구별하기 어려울 때 심화된다.",prof:"정답은 2번, 안보 딜레마예요. 한 나라가 방어 목적으로 군비를 늘려도 상대는 그 의도를 확신할 수 없어서 위협으로 받아들이고, 맞대응하면서 모두의 안보가 오히려 낮아지는 현상이에요. 존 허츠가 개념을 제시했고 로버트 저비스가 방어와 공격을 구별하기 어려울 때 심해진다고 발전시켰어요.\n- 죄수의 딜레마는 비슷해 보이지만 게임 구조를 설명하는 모형이고, 안보 딜레마의 핵심은 의도에 대한 불확실성이에요.\n- 집단행동의 딜레마는 공공재를 두고 무임승차가 생기는 문제예요.\n시험 요령: '방어적 조치가 위협으로 인식된다'가 나오면 안보 딜레마예요."},
+ {category:"민주주의",difficulty:"중",question:"칸트가 『영구평화론』에서 제시한 확정조항에 해당하지 않는 것은?",choices:["각국의 시민적 헌법은 공화제여야 한다","국제법은 자유로운 국가들의 연합에 기초해야 한다","세계시민법은 보편적 우호의 조건에 제한되어야 한다","국가 간 세력균형을 항구적으로 유지해야 한다"],answer:4,explanation:"확정조항은 공화제, 자유국가들의 연합, 보편적 우호 세 가지다. 세력균형 유지는 칸트의 조항이 아니다.",prof:"정답은 4번이에요. 칸트의 확정조항은 세 가지예요. 각국의 헌법은 공화제여야 하고, 국제법은 자유로운 국가들의 연합에 기초해야 하며, 세계시민법은 보편적 우호의 조건으로 제한돼요.\n- 1번, 2번, 3번이 각각 이 세 조항이에요.\n- 4번의 세력균형 유지는 현실주의자들의 평화 논리에 가깝고, 칸트의 확정조항에는 없어요.\n공화제와 평화의 관계는 훗날 민주평화론으로 이어지니 함께 정리해 두세요."},
+ {category:"서양정치사",difficulty:"중",question:"마키아벨리의 『군주론』에서 운명(포르투나)에 맞서는 군주의 역량을 가리키는 개념은?",choices:["비르투(virtù)","프로네시스","콘코르디아","비타 악티바"],answer:1,explanation:"비르투는 상황에 유연하게 대응하는 군주의 능력과 기량을 뜻하며 포르투나와 짝을 이루는 핵심 개념이다.",prof:"정답은 1번, 비르투예요. 마키아벨리는 정치를 운명(포르투나)과 인간 역량(비르투)의 대결로 봤어요. 포르투나는 우연과 시운이고, 비르투는 그 흐름에 맞서 상황에 유연하게 대응하는 군주의 기량이에요. 도덕적 미덕이 아니라 통치 능력에 가깝다는 점이 핵심이에요.\n- 프로네시스는 아리스토텔레스의 실천적 지혜예요.\n- 콘코르디아는 화합을 뜻하는 라틴어 개념이에요.\n- 비타 악티바는 아렌트가 말한 활동적 삶이에요.\n시험 요령: 포르투나와 비르투는 짝으로 외우세요."},
+ {category:"외교정책분석",difficulty:"상",question:"그레이엄 앨리슨이 쿠바 미사일 위기를 분석하며 제시한 세 가지 모델이 아닌 것은?",choices:["합리적 행위자 모델","조직과정 모델","관료정치 모델","구성주의 정체성 모델"],answer:4,explanation:"앨리슨의 『결정의 본질』은 합리적 행위자(Ⅰ), 조직과정(Ⅱ), 관료정치(Ⅲ) 모델을 제시했다.",prof:"정답은 4번이에요. 앨리슨은 『결정의 본질』에서 쿠바 미사일 위기를 세 가지 모델로 분석했어요. 모델 I은 국가를 합리적 단일 행위자로 보고, 모델 II는 조직의 표준 운영절차가 결과를 좌우한다고 보며, 모델 III은 정부 안 관료들의 협상과 경쟁이 결과를 만든다고 봐요.\n- 구성주의는 1990년대 국제정치이론의 흐름이고, 앨리슨의 분석틀에는 포함되지 않아요.\n시험 요령: 합리적 행위자, 조직과정, 관료정치를 세트로 외우고 각 모델의 키워드를 붙여 두세요."},
+ {category:"국제안보",difficulty:"중",question:"상호확증파괴(MAD)에 기반한 핵억지가 안정적으로 작동하기 위한 가장 핵심적인 조건은?",choices:["선제 타격 능력의 우위","양측의 생존 가능한 2차 타격 능력","방어용 미사일 체계의 전면 배치","재래식 군사력의 균형"],answer:2,explanation:"상대의 선제공격 후에도 보복할 수 있는 2차 타격 능력이 있어야 선제공격 유인이 사라진다.",prof:"정답은 2번, 생존 가능한 2차 타격 능력이에요. 상대가 먼저 쳐도 내가 살아남아 보복할 수 있어야 선제공격으로 얻을 이득이 사라지고, 그래서 억지가 안정돼요.\n- 1번처럼 한쪽이 선제 타격 우위를 가지면 상대는 먼저 쏘고 싶은 유인이 생겨 위기가 불안정해져요.\n- 3번처럼 방어 체계를 전면 배치하면 상대의 보복 능력을 무력화할 수 있어서 오히려 MAD를 흔들 수 있어요. 미소 간 탄도탄요격미사일 제한 논리와 연결돼요.\n시험 요령: 억지의 안정은 '보복이 확실한가'로 판단하세요."},
+ {category:"한반도·지역",difficulty:"중",question:"1991년 남북기본합의서가 남북관계를 규정한 표현으로 옳은 것은?",choices:["국가 대 국가의 관계","통일을 지향하는 과정에서 잠정적으로 형성되는 특수관계","적대적 교전 당사자 관계","국제법상 동등한 두 주권국가의 관계"],answer:2,explanation:"합의서 전문은 남북관계를 나라와 나라 사이의 관계가 아닌 통일을 지향하는 과정에서 잠정적으로 형성되는 특수관계로 규정했다.",prof:"정답은 2번이에요. 1991년 12월에 채택된 남북기본합의서는 전문에서 남북관계를 나라와 나라 사이의 관계가 아니라 통일을 지향하는 과정에서 잠정적으로 형성되는 특수관계로 규정했어요. 두 체제가 공존하면서도 통일을 최종 목표로 둔다는 입장이 담겨 있어요.\n- 1번과 4번처럼 국가 대 국가나 두 주권국가로 보는 표현은 이 합의서의 입장과 달라요.\n- 3번 교전 당사자 관계도 합의서가 강조한 화해와 불가침, 교류·협력과 거리가 있어요.\n시험 요령: '잠정적 특수관계'라는 표현을 그대로 기억하세요."},
+ {category:"민주주의",difficulty:"중",question:"로버트 달이 폴리아키(polyarchy) 개념을 설명하면서 강조한 두 가지 차원은?",choices:["평등과 효율","공적 경쟁(경쟁)과 참여(포용)","분권과 연방제","대표성과 책임성"],answer:2,explanation:"달은 공적 경쟁의 허용 정도와 정치 참여의 포용 범위, 두 축으로 체제를 분류했다.",prof:"정답은 2번, 공적 경쟁과 참여예요. 달은 『폴리아키』에서 정치체제를 공적 경쟁(반대와 경쟁의 허용 정도)과 포용(참여할 수 있는 시민의 범위)이라는 두 축으로 나눴어요. 두 축이 모두 높은 현실의 민주체제를 이상적 민주주의와 구별해 폴리아키라고 불렀어요.\n- 평등과 효율, 분권과 연방제, 대표성과 책임성은 민주주의를 논할 때 자주 나오지만 달의 두 차원은 아니에요.\n시험 요령: 경쟁과 포용, 두 축으로 체제를 분류하는 틀을 그림으로 떠올리세요."}
+];
+function normalize(raw,i){
+  const q=String(raw.question||raw.문제||"").trim();
+  let ch=raw.choices||raw.보기||[];if(!Array.isArray(ch))ch=[];
+  ch=ch.map(c=>String(c).trim()).filter(Boolean);
+  const a=Number(raw.answer??raw.정답);
+  if(!q)throw new Error("문제 본문이 비어 있습니다");
+  if(ch.length<2)throw new Error("보기가 2개 미만입니다");
+  if(!Number.isInteger(a)||a<1||a>ch.length)throw new Error("정답 번호가 보기 범위를 벗어났습니다");
+  let id=String(raw.id||"").replace(/[^A-Za-z0-9_-]/g,"");
+  if(!id)id="q"+Date.now().toString(36)+Math.random().toString(36).slice(2,5)+i;
+  return {id,category:String(raw.category||raw.영역||"기타").trim()||"기타",difficulty:String(raw.difficulty||raw.난이도||"중").trim()||"중",question:q,choices:ch,answer:a,explanation:String(raw.explanation||raw.해설||"").trim(),prof:String(raw.prof||raw.교수해설||"").trim()};
+}
+const SAMPLES=SAMPLE_BANK.map((q,i)=>{const n=normalize(q,i);n.id="s"+i;return n});
+
+/* ===== 전역 상태 ===== */
+let view="boot",tab="home",ptab="dash";
+let S=null;
+let sel={cats:new Set(),diffs:new Set(),mode:"practice",count:10};
+const effBank=()=>SAMPLES;
+const qById=id=>effBank().find(q=>q.id===id);
+
+/* ===== 내 기록 ===== */
+const blankMe=()=>({name:"",sid:"",xp:0,solved:0,correct:0,streak:0,lastDay:"",todayD:"",todayN:0,cat:{},q:{},hist:[],updated:0});
+let ME=Object.assign(blankMe(),LS.get("me_v2",{}));
+let STAR=LS.get("star_v2",[]);
+function touch(){ME.updated=Date.now();LS.set("me_v2",ME)}
+function record(q,ok){
+  const t=dayKey();
+  if(ME.lastDay!==t){const y=dayKey(Date.now()-864e5);ME.streak=ME.lastDay===y?ME.streak+1:1;ME.lastDay=t}
+  if(ME.todayD!==t){ME.todayD=t;ME.todayN=0}
+  ME.todayN++;ME.solved++;if(ok)ME.correct++;
+  ME.xp+=ok?10:2;
+  const c=ME.cat[q.category]=ME.cat[q.category]||[0,0];c[0]++;if(ok)c[1]++;
+  const r=ME.q[q.id]=ME.q[q.id]||[0,0,0];r[0]++;if(ok)r[1]++;r[2]=ok?0:1;
+  touch();
+}
+const level=()=>1+Math.floor(ME.xp/150);
+const wrongIds=()=>Object.keys(ME.q).filter(id=>ME.q[id][2]===1&&qById(id));
+
+/* ===== 화면 전환 ===== */
+function setView(v){
+  view=v;
+  const map={onboard:"vOnboard",main:"vMain",quiz:"vQuiz",result:"vResult"};
+  Object.values(map).forEach(id=>$(id).classList.add("hidden"));
+  if(map[v])$(map[v]).classList.remove("hidden");
+  $("nav").classList.toggle("hidden",v!=="main");
+  window.scrollTo(0,0);
+  if(v==="main")renderMain();
+}
+function enter(){setView(ME.name?"main":"onboard")}
+
+/* ===== 학생: 메인 탭 ===== */
+const TABS=[["home","홈","🏠"],["study","문제풀기","✏️"],["notes","오답노트","📒"],["me","내 기록","📊"]];
+function renderNav(){
+  $("navIn").innerHTML=TABS.map(([k,n,e])=>`<button data-act="tab" data-v="${k}" class="${tab===k?"on":""}"><em>${e}</em>${n}</button>`).join("");
+}
+function allCats(){return [...new Set(effBank().map(q=>q.category))]}
+function renderMain(){
+  renderNav();
+  const b=$("tabBody");
+  if(tab==="home")b.innerHTML=homeHTML();
+  else if(tab==="study")b.innerHTML=studyHTML();
+  else if(tab==="notes")b.innerHTML=notesHTML();
+  else b.innerHTML=meHTML();
+}
+function ring(p){const r=34,c=2*Math.PI*r;return `<div class="ring"><svg width="84" height="84"><circle cx="42" cy="42" r="${r}" fill="none" stroke="#e3e5fb" stroke-width="9"/><circle cx="42" cy="42" r="${r}" fill="none" stroke="#5b5bf0" stroke-width="9" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-Math.min(1,p))}"/></svg><b class="disp">${Math.round(Math.min(1,p)*100)}%</b></div>`}
+function homeHTML(){
+  const t=dayKey(),todayN=ME.todayD===t?ME.todayN:0,goal=10;
+  const xpIn=ME.xp%150;
+  const wn=wrongIds().length;
+  const cats=allCats();
+  return `<div class="hero">
+    <div class="kick">AI 교수와 함께하는 문제은행</div>
+    <div class="univ">동아대학교 정치외교학전공</div>
+    <h1 class="disp">외무직 시험대비<br>국제정치</h1>
+    <div class="hi">안녕하세요, <b>${esc(ME.name)}</b>님! 오늘도 한 걸음 🔥</div>
+    <div class="lv"><span class="badge">Lv.${level()}</span><div class="xpbar"><i style="width:${xpIn/150*100}%"></i></div><span style="font-size:12px;font-weight:700">${xpIn}/150 XP</span></div>
+  </div>
+  <div class="pull"><div class="card mission">
+    ${ring(todayN/goal)}
+    <div class="sp"><b style="font-size:17px">오늘의 미션</b><div class="note">하루 ${goal}문제 풀기 · 오늘 ${todayN}문제</div>
+    <div style="margin-top:6px;font-weight:700">🔥 연속 ${ME.streak||0}일</div></div>
+  </div></div>
+  <div class="body">
+    <div class="sec">바로 시작</div>
+    <div class="tiles">
+      <button class="tile t1" data-act="quick" data-n="10"><em class="e">⚡</em>빠른 10문제<span>무작위로 가볍게</span></button>
+      <button class="tile t2" data-act="quick" data-n="20"><em class="e">📝</em>모의고사 20문제<span>다 풀고 채점</span></button>
+      <button class="tile t3" data-act="wrongAll" ${wn?"":"disabled style='opacity:.5'"}><em class="e">🔁</em>오답 복습${wn?" ("+wn+")":""}<span>틀린 문제 정복</span></button>
+      <button class="tile t4" data-act="tab" data-v="study"><em class="e">🎯</em>영역 골라 풀기<span>약한 곳 집중</span></button>
+    </div>
+    <div class="sec">영역별 정복도</div>
+    <div class="card" style="padding:6px 16px">${cats.map(c=>{const n=effBank().filter(q=>q.category===c).length;const s=ME.cat[c]||[0,0];const p=pct(s[1],s[0]);
+      return `<button class="catrow" data-act="catStart" data-c="${esc(c)}"><div class="ic">${icon(c)}</div><div class="mid"><b>${esc(c)}</b><span class="note">${n}문항 · ${s[0]?`정답률 ${p}%`:"아직 도전 전"}</span><div class="mini"><i style="width:${p}%"></i></div></div><span class="pill">GO</span></button>`}).join("")||`<div class="empty">문제가 아직 없어요</div>`}</div>
+  </div>`;
+}
+function studyHTML(){
+  const cats=allCats();const diffs=[...new Set(effBank().map(q=>q.difficulty))];
+  const pool=poolQs();
+  return `<div class="body" style="padding-top:20px">
+    <h2 class="disp" style="font-size:24px;margin:0 0 12px">문제 풀기</h2>
+    <div class="card">
+      <label class="f" style="margin-top:0">영역 (여러 개 선택, 안 고르면 전체)</label>
+      <div class="chips">${cats.map(c=>`<button class="chip ${sel.cats.has(c)?"on":""}" data-act="togCat" data-c="${esc(c)}">${icon(c)} ${esc(c)}</button>`).join("")}</div>
+      <label class="f">난이도</label>
+      <div class="chips">${diffs.map(c=>`<button class="chip ${sel.diffs.has(c)?"on":""}" data-act="togDiff" data-c="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+      <label class="f">문항 수</label>
+      <div class="chips">${[10,20,30,50,0].map(n=>`<button class="chip ${sel.count===n?"on":""}" data-act="cnt" data-n="${n}">${n?n+"문제":"전체"}</button>`).join("")}</div>
+      <label class="f">채점 방식</label>
+      <div class="seg"><button data-act="mode" data-m="practice" class="${sel.mode==="practice"?"on":""}">문제마다 바로 채점</button><button data-act="mode" data-m="exam" class="${sel.mode==="exam"?"on":""}">다 풀고 채점</button></div>
+      <button class="btn pri block" data-act="startSel" style="margin-top:18px" ${pool.length?"":"disabled"}>시작하기 (${pool.length}문항 중)</button>
+    </div>
+    <div class="card"><b>⭐ 북마크한 문제</b> <span class="note">${STAR.filter(qById).length}개</span>
+      <button class="btn block" style="margin-top:10px" data-act="starStart" ${STAR.filter(qById).length?"":"disabled"}>북마크 문제만 풀기</button></div>
+  </div>`;
+}
+function notesHTML(){
+  const ids=wrongIds();
+  return `<div class="body" style="padding-top:20px">
+    <h2 class="disp" style="font-size:24px;margin:0 0 12px">오답노트</h2>
+    <div class="card">
+      <div class="row"><b>최근에 틀린 문제 ${ids.length}개</b><span class="sp"></span><button class="btn pri sm" data-act="wrongAll" ${ids.length?"":"disabled"}>모두 다시 풀기</button></div>
+      <div style="margin-top:6px">${ids.length?ids.map(id=>{const q=qById(id);return `<button class="wrongit" data-act="oneReview" data-id="${esc(id)}"><span class="pill">${esc(q.category)}</span><span class="tx">${esc(q.question)}</span><span>›</span></button>`}).join(""):`<div class="empty">아직 틀린 문제가 없어요 🎉<br>문제를 풀면 여기에 모여요</div>`}</div>
+    </div></div>`;
+}
+function meHTML(){
+  const h=(ME.hist||[]).slice(-8).reverse();
+  return `<div class="body" style="padding-top:20px">
+    <h2 class="disp" style="font-size:24px;margin:0 0 12px">내 기록</h2>
+    <div class="card"><div class="stat3"><div><b>${ME.solved}</b><span>푼 문제</span></div><div><b>${pct(ME.correct,ME.solved)}%</b><span>정답률</span></div><div><b>${ME.streak||0}일</b><span>연속 학습</span></div></div></div>
+    <div class="card"><b>영역별 정답률</b><div class="bars" style="margin-top:6px">${allCats().map(c=>{const s=ME.cat[c]||[0,0];return `<div class="b"><span class="nm">${esc(c)}</span><div class="mini"><i style="width:${pct(s[1],s[0])}%"></i></div><span class="v">${s[0]?pct(s[1],s[0])+"% ("+s[0]+")":"-"}</span></div>`}).join("")}</div></div>
+    <div class="card"><b>최근 시험</b>${h.length?h.map(x=>`<div class="row" style="padding:8px 0;border-top:1px solid var(--line)"><span class="note">${new Date(x.t).toLocaleDateString("ko-KR",{month:"numeric",day:"numeric"})}</span><span class="sp">${x.c}/${x.n} 정답</span><span class="pill">${pct(x.c,x.n)}점</span></div>`).join(""):`<div class="empty">아직 기록이 없어요</div>`}</div>
+    <div class="card"><b>내 정보</b><p class="note" style="margin:4px 0 8px">${esc(ME.name)}</p><button class="btn sm" data-act="editName">이름 수정</button></div>
+  </div>`;
+}
+
+/* ===== 출제 ===== */
+function poolQs(){return effBank().filter(q=>(!sel.cats.size||sel.cats.has(q.category))&&(!sel.diffs.size||sel.diffs.has(q.difficulty)))}
+function begin(qs,mode,review){
+  if(!qs.length)return;
+  S={qs,mode,idx:0,ans:qs.map(()=>null),rev:qs.map(()=>false),chats:{},review:!!review,busy:false};
+  setView("quiz");renderQ();
+}
+function pick(arr,n){return shuffle(arr).slice(0,n)}
+
+/* ===== 퀴즈 화면 ===== */
+function renderQ(){
+  const q=S.qs[S.idx],i=S.idx,revealed=S.rev[i];
+  $("qpos").textContent=(i+1)+" / "+S.qs.length+(S.review?" · 해설":"");
+  $("progBar").style.width=((i+1)/S.qs.length*100)+"%";
+  $("qmeta").innerHTML=`<span class="pill">${icon(q.category)} ${esc(q.category)}</span><span class="pill">난이도 ${esc(q.difficulty)}</span>`;
+  $("qtext").textContent=q.question;
+  const box=$("opts");box.innerHTML="";
+  q.choices.forEach((c,k)=>{
+    const n=k+1,b=document.createElement("button");b.className="opt";b.disabled=revealed;
+    if(revealed){if(n===q.answer)b.classList.add("right");else if(S.ans[i]===n)b.classList.add("wrong")}
+    else if(S.ans[i]===n)b.classList.add("sel");
+    b.innerHTML=`<span class="n">${n}</span><span>${esc(c)}</span>`;
+    b.onclick=()=>{S.ans[i]=n;renderQ()};box.appendChild(b);
+  });
+  $("fb").classList.toggle("hidden",!revealed);
+  if(revealed){
+    const ok=S.ans[i]===q.answer;
+    $("banner").className="banner "+(ok?"ok":"bad");
+    $("banner").innerHTML=ok?`<span>🎉 정답이에요!</span><span>${S.review?"":"+10 XP"}</span>`:`<span>${S.ans[i]==null?"무응답":"아쉬워요"} · 정답은 ${q.answer}번</span><span>${S.review?"":"+2 XP"}</span>`;
+    $("base").innerHTML=`<b>기본 해설</b>${q.explanation?esc(q.explanation):"등록된 해설이 없어요."}`;
+    renderChat();
+  }
+  $("star").textContent=STAR.includes(q.id)?"★":"☆";
+  $("prev").classList.toggle("hidden",S.mode==="practice"&&!S.review);
+  $("prev").disabled=i===0;
+  const last=i===S.qs.length-1,mb=$("mainBtn");
+  if(S.review){mb.textContent=last?"결과로":"다음 문제 →";mb.disabled=false}
+  else if(S.mode==="practice"){
+    if(!revealed){mb.textContent="정답 확인";mb.disabled=S.ans[i]==null}
+    else{mb.textContent=last?"결과 보기":"다음 문제 →";mb.disabled=false}
+  }else{mb.textContent=last?"제출하고 채점":"다음 →";mb.disabled=false}
+}
+function mainBtn(){
+  stopSpeak();const i=S.idx,last=i===S.qs.length-1;
+  if(!S.review&&S.mode==="practice"&&!S.rev[i]){
+    S.rev[i]=true;record(S.qs[i],S.ans[i]===S.qs[i].answer);renderQ();return;
+  }
+  if(!last){S.idx++;renderQ();window.scrollTo(0,0);return}
+  if(S.review){showResult(false);return}
+  finish();
+}
+function finish(){
+  let gain=0;
+  if(S.mode==="exam"){S.qs.forEach((q,k)=>{const ok=S.ans[k]===q.answer;record(q,ok);gain+=ok?10:2})}
+  else S.qs.forEach((q,k)=>{gain+=S.ans[k]===q.answer?10:2});
+  const c=S.qs.filter((q,k)=>S.ans[k]===q.answer).length;
+  const bonus=S.qs.length>=5?20:0;ME.xp+=bonus;gain+=bonus;
+  ME.hist=(ME.hist||[]).concat([{t:Date.now(),n:S.qs.length,c,m:S.mode}]).slice(-40);
+  touch();report(c);
+  S.gain=gain;showResult(true);
+}
+function report(c){
+  if(!SHEET_URL||!ME.name)return;
+  const by={};S.qs.forEach((q,i)=>{const o=by[q.category]=by[q.category]||[0,0];o[1]++;if(S.ans[i]===q.answer)o[0]++});
+  const byCategory=Object.entries(by).map(([k,v])=>k+" "+v[0]+"/"+v[1]).join(" | ");
+  try{fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({name:ME.name,total:S.qs.length,correct:c,byCategory})}).catch(()=>{})}catch(e){}
+}
+function showResult(fresh){
+  stopSpeak();S.review=false;
+  const n=S.qs.length;let c=0;const by={};
+  S.qs.forEach((q,i)=>{const ok=S.ans[i]===q.answer;if(ok)c++;const o=by[q.category]=by[q.category]||[0,0];o[0]++;if(ok)o[1]++});
+  const p=pct(c,n);
+  $("scoreBig").textContent=p+"점";
+  $("scoreSub").textContent=(p>=90?"🏆 완벽해요! ":p>=70?"👏 잘했어요! ":p>=50?"💪 조금만 더! ":"📚 복습이 필요해요 ")+n+"문제 중 "+c+"문제 정답";
+  $("xpGain").textContent=S.gain?"+"+S.gain+" XP 획득":"";
+  $("catBars").innerHTML=Object.entries(by).map(([k,v])=>`<div class="b"><span class="nm">${esc(k)}</span><div class="mini"><i style="width:${pct(v[1],v[0])}%"></i></div><span class="v">${v[1]}/${v[0]}</span></div>`).join("");
+  $("resList").innerHTML=S.qs.map((q,i)=>{const ok=S.ans[i]===q.answer;return `<button class="wrongit" data-act="reviewAt" data-i="${i}"><b style="width:22px;color:${ok?"var(--mint)":"var(--coral)"}">${ok?"O":"X"}</b><span class="tx">${i+1}. ${esc(q.question)}</span><span>›</span></button>`}).join("");
+  $("retryWrong").disabled=c===n;
+  setView("result");
+}
+
+/* ===== AI 교수님 (미리 작성된 해설) ===== */
+const profText=q=>q.prof||q.explanation||"등록된 해설이 없어요.";
+function renderChat(){
+  const q=S.qs[S.idx],shown=!!S.chats[q.id],box=$("chat");
+  box.innerHTML=shown?'<div class="msg a">'+md(profText(q))+'</div>':"";
+  $("explainRow").classList.toggle("hidden",shown);
+  $("speak").classList.toggle("hidden",!(shown&&("speechSynthesis" in window)));
+  $("explain").disabled=false;$("explain").textContent="🧑‍🏫 교수님 해설 듣기";
+}
+function callProf(){
+  const q=S.qs[S.idx],at=S.idx;$("explain").disabled=true;$("explain").textContent="교수님이 정리하는 중…";
+  setTimeout(()=>{S.chats[q.id]=true;if(S&&S.idx===at)renderChat()},650);
+}
+const plain=t=>t.replace(/\*\*/g,"").replace(/[`#]/g,"").replace(/^\s*[-*•]\s+/gm,"").slice(0,1900);
+function speakNow(){
+  if(!("speechSynthesis" in window))return;
+  if(speechSynthesis.speaking){stopSpeak();return}
+  const u=new SpeechSynthesisUtterance(plain(profText(S.qs[S.idx])));u.lang="ko-KR";
+  u.onend=u.onerror=()=>{$("speak").textContent="🔊 읽어주기"};
+  $("speak").textContent="■ 멈추기";speechSynthesis.speak(u);
+}
+function stopSpeak(){try{speechSynthesis.cancel()}catch(e){}const b=$("speak");if(b)b.textContent="🔊 읽어주기"}
+
+/* ===== 이벤트 ===== */
+const act={
+  tab:d=>{tab=d.v;renderMain();window.scrollTo(0,0)},
+  home:()=>{tab="home";setView("main")},
+  quit:()=>{stopSpeak();if(S&&!S.review&&S.mode==="exam"&&S.ans.some(a=>a!=null)){finish()}else if(S&&S.review){showResult(false)}else{setView("main")}},
+  quick:d=>{const p=effBank();begin(pick(p,Number(d.n)),Number(d.n)>=20?"exam":"practice")},
+  catStart:d=>{begin(pick(effBank().filter(q=>q.category===d.c),10),"practice")},
+  wrongAll:()=>{const ids=new Set(wrongIds());begin(shuffle(effBank().filter(q=>ids.has(q.id))),"practice")},
+  oneReview:d=>{const q=qById(d.id);if(q){S={qs:[q],mode:"practice",idx:0,ans:[null],rev:[false],chats:{},review:false,busy:false};setView("quiz");renderQ()}},
+  togCat:d=>{sel.cats.has(d.c)?sel.cats.delete(d.c):sel.cats.add(d.c);renderMain()},
+  togDiff:d=>{sel.diffs.has(d.c)?sel.diffs.delete(d.c):sel.diffs.add(d.c);renderMain()},
+  cnt:d=>{sel.count=Number(d.n);renderMain()},
+  mode:d=>{sel.mode=d.m;renderMain()},
+  startSel:()=>{let p=shuffle(poolQs());if(sel.count&&sel.count<p.length)p=p.slice(0,sel.count);begin(p,sel.mode)},
+  starStart:()=>{begin(shuffle(effBank().filter(q=>STAR.includes(q.id))),"practice")},
+  reviewAt:d=>{S.review=true;S.rev=S.qs.map(()=>true);S.idx=Number(d.i);setView("quiz");renderQ()},
+  editName:()=>{setView("onboard");$("obName").value=ME.name},
+};
+document.addEventListener("click",e=>{const t=e.target.closest("[data-act]");if(!t||t.disabled)return;const f=act[t.dataset.act];if(f)f(t.dataset,t)});
+$("mainBtn").onclick=mainBtn;
+$("prev").onclick=()=>{stopSpeak();if(S.idx>0){S.idx--;renderQ()}};
+$("star").onclick=()=>{const id=S.qs[S.idx].id;STAR=STAR.includes(id)?STAR.filter(x=>x!==id):STAR.concat(id);LS.set("star_v2",STAR);renderQ()};
+$("explain").onclick=()=>callProf();
+$("speak").onclick=speakNow;
+$("retryWrong").onclick=()=>{const w=S.qs.filter((q,i)=>S.ans[i]!==q.answer);begin(shuffle(w),"practice")};
+$("obGo").onclick=()=>{const n=$("obName").value.trim();if(!n){$("obName").focus();return}ME.name=n;touch();tab="home";setView("main")};
+
+/* ===== 시작 ===== */
+enter();
+</script>
+</body>
+</html>
